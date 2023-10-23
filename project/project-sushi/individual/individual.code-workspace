@@ -1,0 +1,15 @@
+{
+    "folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../lecture/web-atoz"
+		}
+	],
+    "settings": {
+        "liveServer.settings.useLocalIp": true,
+        "liveServer.settings.multiRootWorkspaceName": "individual",
+        "liveServer.settings.host": "ipconfig"
+    }
+}

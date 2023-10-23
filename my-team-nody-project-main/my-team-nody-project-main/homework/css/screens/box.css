@@ -1,0 +1,30 @@
+.boxOne {
+  background-color: white;
+  height: 430px;
+  width: 770px;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin: 5px auto 0px 0px;
+}
+.boxTwo {
+  background-color: white;
+  height: 430px;
+  width: 880px;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin: 5px 27px 0px auto;
+}
+.numberIntro > div {
+  background-color: white;
+  height: 350px;
+  width: 880px;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin: 5px Auto 0px 511px;
+}
+.teamAndRecord {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: left;
+}

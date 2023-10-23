@@ -1,0 +1,12 @@
+.mytitle {
+  color: purple;
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: left;
+}
+.teamName {
+  font-size: 90px;
+  color: wheat;
+  padding: 20px auto 0px auto;
+}
