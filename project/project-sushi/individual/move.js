@@ -1,23 +1,39 @@
 // OPEN API
-async function post() {
-    const url = `https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1/`;
-    const options = {
-        method: "GET",
-        headers: {
-            accept: "application/json",
-            Authorization:
-                "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMDkzNzRjY2EyNTc1NjM4ZDEwMDk3NzAzYjFhODliYSIsInN1YiI6IjY1MmZiZWRkYTgwMjM2MDBmZDJkOWY0NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ga70Ew8jOvgDuOUzMiuJgfI8GjGGypablmY74WjMtUs",
-        },
-    };
+const options = {
+    method: "GET",
+    headers: {
+        accept: "application/json",
+        Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMDkzNzRjY2EyNTc1NjM4ZDEwMDk3NzAzYjFhODliYSIsInN1YiI6IjY1MmZiZWRkYTgwMjM2MDBmZDJkOWY0NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ga70Ew8jOvgDuOUzMiuJgfI8GjGGypablmY74WjMtUs",
+    },
+};
+async function post() {}
 
-    const res = await fetch(url, options);
-    const data = res.json();
-    if (res.ok) {
-        return data;
-    } else {
-        throw Error(data);
+let entireArr = [];
+
+const translateOpenAPI = async (url) => {
+    try {
+        const res = await fetch(url, options);
+        const json = await res.json();
+        const { results } = json;
+        entireArr = results;
+        throw error;
+    } catch (e) {
+        console.error(error);
     }
-}
+};
+
+const openApiUrl = "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1/";
+
+const init = async () => {
+    const analsysisOpenApi = openApiUrl.map(async (variousthing) => {
+        const storehouse = await translateOpenAPI(variousthing);
+        return storehouse;
+        try {
+            
+        }
+    });
+};
 
 let totallFunc = await post();
 let movieArray = Array.from(totallFunc.results);
