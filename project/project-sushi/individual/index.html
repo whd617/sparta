@@ -3,18 +3,57 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Moive Star</title>
-        <script type="module" defer src="move.js"></script>
+        <link rel="stylesheet" href="styles/main.css" />
+        <title>RESTV</title>
+        <script type="module" defer src="./maindirctor/index.js"></script>
     </head>
     <body>
-        <div class="fram">
-            <h1>Moive Star</h1>
-            <input class="searchInput" type="text" placeholder="영화를 입력하세요." />
-            <button class="button">검색</button>
-
-            <div class="cards">
-                <div class="imgPoster"></div>
+        <header>
+            <div class="mainheader">
+                <ul class="maintitle">
+                    <li><a href="./index.html">RESTV</a></li>
+                </ul>
             </div>
-        </div>
+        </header>
+        <section class="seach-section">
+            <form method="get" class="search-area">
+                <div class="search">
+                    <input class="search-input" type="text" placeholder="검색어 입력" />
+                    <input class="search-button" type="submit" value="검 색" name="buttonUp" class="search-button" />
+                </div>
+            </form>
+        </section>
+        <section>
+            <div class="movie-list">
+                <h1 class="movie-list-title">Movie</h1>
+                <form class="movie-lists-button">
+                    <button>TOP</button>
+                    <button>POPULAR</button>
+                    <button>LIVE</button>
+                    <button>UPCOMMING</button>
+                </form>
+            </div>
+        </section>
+        <section>
+            <div class="tv-list">
+                <h1 class="tv-list-title">TV</h1>
+                <form class="tv-lists-button">
+                    <button>TOP</button>
+                    <button>POPULAR</button>
+                    <button>LIVE</button>
+                    <button>UPCOMMING</button>
+                </form>
+            </div>
+        </section>
+        <footer>
+            <nav>
+                <a target="_blank" href="https://www.instagram.com/chooooi_006/">Instagram</a>
+                <a target="_blank" href="https://wlrma-123.tistory.com/">Blog</a>
+                <a target="_blank" href="https://github.com/whd617">Github</a>
+            </nav>
+            <p>
+                <span>Copyright 2023.</span>
+            </p>
+        </footer>
     </body>
 </html>
