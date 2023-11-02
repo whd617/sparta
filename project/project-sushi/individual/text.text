@@ -1,4 +1,3 @@
-@import "reset.css";
 
 * {
     margin: 0;
@@ -61,19 +60,17 @@ header {
 }
 .main-display-controll {
     background: navy;
-    min-height: 35dvh;
+    min-height: 40dvh;
     display: grid;
     place-items: center;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    font-size: 100px;
+
     /*   width: 80%; */
     /* height: 350px;
     margin-top: 10px;
     margin-bottom: 10px; */
 }
 .main-display-div {
-    width: 82%;
+    width: 80%;
     height: 100%;
     background: cadetblue;
     text-align: center;
@@ -181,12 +178,12 @@ footer {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    position: fixed;
+    position: absolute;
     border-top: 1px solid rgba(0, 0, 0, 0.4);
     padding-top: 15px;
     color: rgba(255, 255, 255, 0.4);
     font-size: 15px;
-    background-color: rgb(64, 64, 64);
+    height: 100vh;
 }
 
 footer a {
@@ -208,5 +205,3 @@ footer p span {
     display: inline-block;
     margin-left: 20px;
 }
-
-/* ----------------------------- */
