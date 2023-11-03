@@ -11,7 +11,7 @@ const goodsSchema = new mongoose.Schema({
         required: true,
         unique: true,
     },
-    thumnailUrl: {
+    thumbnailUrl: {
         type: String,
     },
     category: {
