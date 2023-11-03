@@ -1,7 +1,10 @@
 // /routes/goods.js
 const express = require("express");
 const router = express.Router();
+
 const Goods = require("../schemas/goods.js");
+const Cart = require("../schemas/cart.js");
+
 const goods = [
     {
         goodsId: 4,
@@ -43,6 +46,23 @@ router.get("/goods/:goodsId", (req, res) => {
     const { goodsId } = req.params;
     const [detail] = goods.filter((goods) => Number(goodsId) === goods.goodsId);
     res.json({ detail });
+});
+
+router.post("/goods/:goodsId/cart", async (req, res) => {
+    const { goodsId } = req.params;
+    const { quantity } = req.body;
+
+    const existsCarts = await Cart.find({ goodsId });
+    console.log(existsCarts.lenght);
+    if (existsCarts.length) {
+        console.log(existsCarts);
+        return res.status(400).json({
+            success: false,
+            errorMessage: "이미 장바구니에 해당하는 상품이 존재합니다.",
+        });
+    }
+    await Cart.create({ goodsId, quantity });
+    res.json({ result: "success" });
 });
 
 router.post("/goods/", async (req, res) => {
