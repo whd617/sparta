@@ -53,15 +53,36 @@ router.post("/goods/:goodsId/cart", async (req, res) => {
     const { quantity } = req.body;
 
     const existsCarts = await Cart.find({ goodsId });
-    console.log(existsCarts.lenght);
     if (existsCarts.length) {
-        console.log(existsCarts);
         return res.status(400).json({
             success: false,
             errorMessage: "이미 장바구니에 해당하는 상품이 존재합니다.",
         });
     }
     await Cart.create({ goodsId, quantity });
+    res.json({ result: "success" });
+});
+
+router.put("/goods/:goodsId/cart", async (req, res) => {
+    const { goodsId } = req.params;
+    const { quantity } = req.body;
+
+    const existsCarts = await Cart.find({ goodsId });
+    if (existsCarts.length) {
+        // goodsId에 해당하는 값이 있을 때, 우리는 수정을 할 것이다 quantity의 값을 quantity의 값으로 업데이트 할 것이다.
+        // Cart.updateOne({찾은 객체},{수정할(즉, 업데이트할) 목록})
+        await Cart.updateOne({ goodsId: goodsId }, { $set: { quantity: quantity } });
+    }
+    res.status(200).json({ success: true });
+});
+
+router.delete("/goods/:goodsId/cart", async (req, res) => {
+    const { goodsId } = req.params;
+
+    const existsCarts = await Cart.find({ goodsId });
+    if (existsCarts.length) {
+        await Cart.deleteOne({ goodsId });
+    }
     res.json({ result: "success" });
 });
 
