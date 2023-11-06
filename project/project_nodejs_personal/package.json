@@ -1,0 +1,21 @@
+{
+    "name": "project_nodejs_personal",
+    "version": "1.0.0",
+    "description": "Node.js personal project",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node ./src/index.js",
+        "dev": "nodemon . /src/index.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.18.2",
+        "nodemon": "^3.0.1"
+    },
+    "type": "commonjs",
+    "devDependencies": {
+        "nodemon": "^3.0.1"
+    }
+}
