@@ -1,23 +1,23 @@
 {
-    "name": "spa_mall",
-    "version": "1.0.0",
-    "description": "",
-    "main": "app.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node ./src/index.js",
-        "dev": "nodemon . /src/index.js"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "express": "^4.18.2",
-        "mongodb": "^6.2.0",
-        "mongoose": "^8.0.0"
-    },
-    "type": "commonjs",
-    "devDependencies": {
-        "nodemon": "^3.0.1"
-    }
+  "name": "jonghyeon_choi_mall",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.js",
+    "dev": "nodemon . /src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^6.2.0",
+    "mongoose": "^8.0.0"
+  },
+  "type": "commonjs",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "description": "Do the Node.js personal project"
 }
