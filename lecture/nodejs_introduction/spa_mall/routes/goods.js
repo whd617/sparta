@@ -36,10 +36,21 @@ const goods = [
     },
 ];
 
-// 상품 목록 조회 API
-router.get("/goods", (req, res) => {
-    res.json({ goods: goods });
+router.get("/", (req, res) => {
+    res.json({ message: "This is a home page" });
 });
+
+// 상품 목록 조회 API
+router.get(
+    "/goods",
+    (req, res, next) => {
+        console.log("/goods 미들웨어");
+        next();
+    },
+    (req, res) => {
+        res.json({ goods: goods });
+    }
+);
 
 // 상품 상세 조회 API
 router.get("/goods/:goodsId", (req, res) => {
