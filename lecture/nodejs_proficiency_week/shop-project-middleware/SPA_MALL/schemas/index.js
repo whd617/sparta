@@ -4,7 +4,7 @@ const connect = () => {
     mongoose
         .set("strictQuery", true)
         .connect(
-            "mongodb+srv://user:8myK2JvctvVnHGvW@cluster0.ace49sq.mongodb.net/spa_mall?retryWrites=true&w=majority"
+            "mongodb+srv://user:8myK2JvctvVnHGvW@cluster0.ace49sq.mongodb.net/shopping-demo?retryWrites=true&w=majority"
         )
         .catch((err) => console.log(err));
 };
