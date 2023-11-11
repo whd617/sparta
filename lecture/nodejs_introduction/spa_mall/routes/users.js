@@ -8,7 +8,6 @@ const User = require("../schemas/user");
 // 회원가입 API
 router.post("/users", async (req, res) => {
     const { email, nickname, password, confirmPassword } = req.body;
-
     if (password !== confirmPassword) {
         res.status(400).json({
             errorMessage: "패스워드가 패스워드 확인란과 다릅니다.",
@@ -20,6 +19,7 @@ router.post("/users", async (req, res) => {
     const existsUsers = await User.findOne({
         $or: [{ email }, { nickname }],
     });
+
     if (existsUsers) {
         // NOTE: 보안을 위해 인증 메세지는 자세히 설명하지 않습니다.
         res.status(400).json({
@@ -29,6 +29,7 @@ router.post("/users", async (req, res) => {
     }
 
     const user = new User({ email, nickname, password });
+    console.log(user);
     await user.save();
 
     res.status(201).json({});

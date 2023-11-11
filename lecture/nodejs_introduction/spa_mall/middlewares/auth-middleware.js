@@ -6,6 +6,7 @@ const User = require("../schemas/user");
 // 사용자 인증 미들웨어
 module.exports = async (req, res, next) => {
     const { Authorization } = req.cookies;
+    console.log(Authorization);
     const [authType, authToken] = (Authorization ?? "").split(" ");
 
     if (!authToken || authType !== "Bearer") {
@@ -16,8 +17,11 @@ module.exports = async (req, res, next) => {
     }
 
     try {
+        console.log(userId);
         const { userId } = jwt.verify(authToken, "customized-secret-key");
+
         const user = await User.findById(userId);
+
         res.locals.user = user;
         next();
     } catch (err) {
