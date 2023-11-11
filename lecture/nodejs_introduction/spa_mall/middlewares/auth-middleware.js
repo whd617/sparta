@@ -1,4 +1,5 @@
 // middlewares/auth-middleware.js
+
 const jwt = require("jsonwebtoken");
 const User = require("../schemas/user");
 
@@ -6,7 +7,7 @@ const User = require("../schemas/user");
 module.exports = async (req, res, next) => {
     const { Authorization } = req.cookies;
     const [authType, authToken] = (Authorization ?? "").split(" ");
-    console.log(authType);
+
     if (!authToken || authType !== "Bearer") {
         res.status(401).send({
             errorMessage: "로그인 후 이용 가능한 기능입니다.",
