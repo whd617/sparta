@@ -6,7 +6,7 @@ const User = require("../schemas/user");
 // 사용자 인증 미들웨어
 module.exports = async (req, res, next) => {
     const { Authorization } = req.cookies;
-    console.log(Authorization);
+
     const [authType, authToken] = (Authorization ?? "").split(" ");
 
     if (!authToken || authType !== "Bearer") {
