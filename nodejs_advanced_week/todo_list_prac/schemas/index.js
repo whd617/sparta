@@ -1,12 +1,13 @@
 // schemas/index.js
 
 import mongoose from 'mongoose';
-
+import dotenv from 'dotenv';
+dotenv.config();
 const connect = () => {
   mongoose
     .connect(
       // 빨간색으로 표시된 부분은 대여한 ID, Password, 주소에 맞게끔 수정해주세요!
-      'mongodb+srv://user:8myK2JvctvVnHGvW@cluster0.ace49sq.mongodb.net/?retryWrites=true&w=majority',
+      MONGODB,
       {
         dbName: 'todo_memo_prac', // todo_memo 데이터베이스명을 사용합니다.
       },
